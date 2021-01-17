@@ -1,6 +1,6 @@
 # hotels
 
-A hotel booking webapp, build with JavaScript. It uses Firebase Authentication and a Cloud Firestore DB on the backend, while running Vue.js, Vuex and VueRouting on the front.  It allows users to search for, and book, hotels while also allowing them to add to their wish list and maintain their profile.
+A hotel booking webapp, build with JavaScript. It uses Firebase Authentication and a Cloud Firestore DB on the backend, while running Vue.js, Vuex and VueRouting on the front.  It allows users to search for, and book, hotels while also allowing them to add to their wish list and maintain their profile.  Still a work in progress.
 
 The fantastic UI design comes from Ami Moradia's free resources.  You'll find her Github at https://amimoradia.github.io/
 
