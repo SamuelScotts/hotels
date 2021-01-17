@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <v-content>
       <v-row>
         <v-col>
           <h1 class="text-center">Explore</h1>
@@ -36,7 +36,7 @@
       </v-row>
       <v-row>
         <v-col>
-          <v-text-field class="mb-n4" color="#EF5350" outlined label="No. of Adults" prepend-inner-icon="mdi-map-marker"></v-text-field>
+          <v-text-field class="mb-n4" color="#EF5350" outlined label="No. of Adults" prepend-inner-icon="mdi-account"></v-text-field>
         </v-col>
       </v-row>
 
@@ -50,27 +50,29 @@
       <v-row>
         <h2 class="mt-8 ml-3">Top Hotels</h2>
         <v-spacer></v-spacer>
-        <span class="mt-11 mr-4">View All</span>
+        <span class="mt-10 mr-4"><router-link to="/top" style="text-decoration: none;"><v-btn small text>View All</v-btn></router-link></span>
       </v-row>
 
       <!-- TOP HOTELS CARDS -->
       <v-row>
-        <v-card class="ml-3 mt-5 pa-2">
-          <v-card-title>Hotel 1</v-card-title>
-          <v-card-text>This is hotel 1.</v-card-text>
-        </v-card>
-        <v-card class="ml-3 mt-5 pa-2">
-          <v-card-title>Hotel 2</v-card-title>
-          <v-card-text>This is hotel 2.</v-card-text>
+        <v-card v-for="(topHotel, index) in topHotels.slice(0,4)" :key="index" width="16rem" class="ml-3 mt-5 pa-2">
+          <v-img height="150" src="../assets/hotel.jpg"></v-img>
+          <v-card-title>{{ topHotel.name }}</v-card-title>
+          <v-card-text class="mt-n4">
+            Location: {{ topHotel.location }} <br/>
+            Rating: {{ topHotel.rating }}
+          </v-card-text>
         </v-card>
       </v-row>
 
     </v-container>
     <FooterBar/>
-  </div>
+  </v-content>
 </template>
 
 <script>
+//import firebase from 'firebase';
+//import db from '../firestore'
 import FooterBar from '../components/FooterBar'
 
 export default {
@@ -81,6 +83,51 @@ export default {
   data: () => ({
     menu1: false,
     menu2: false,
+    topHotels:[
+      {
+        name: "Malmasion",
+        location: "Aberdeen",
+        rating: 4.7
+      },
+      {
+        name: "Hilton",
+        location: "Aberdeen",
+        rating: 4.6
+      },
+      {
+        name: "Jurys Inn",
+        location: "Aberdeen",
+        rating: 4.1
+      },
+      {
+        name: "Travel Lodge",
+        location: "Dundee",
+        rating: 3.9
+      },
+      {
+        name: "Malmasion",
+        location: "Dundee",
+        rating: 4.6
+      },
+      {
+        name: "Station Hotel",
+        location: "Perth",
+        rating: 3.1
+      },
+    ],
   }),
+/*   mounted(){
+    db.collection("hotels").where("rating", "==", 4)
+    .get()
+    .then(function(querySnapshot) {
+        querySnapshot.forEach((doc) => {
+            console.log(doc.id, " => ", doc.data());
+            this.topHotels.push(doc.Data())
+        });
+    })
+    .catch(function(error) {
+        console.log("Error getting documents: ", error);
+    });
+  } */
 }
 </script>

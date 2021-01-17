@@ -21,9 +21,9 @@
       <!-- INPUT FIELDS -->
       <v-row class="mt-1">
         <v-col>
-            <v-text-field v-model="name" solo class="mb-n8 mr-1" color="#EF5350" outlined label="Name" prepend-inner-icon="mdi-account"></v-text-field>
-            <v-text-field v-model="email" solo class="mt-4 mb-n6 mr-1" color="#EF5350" outlined label="Email" prepend-inner-icon="mdi-email"></v-text-field>
-            <v-text-field v-model="password" solo class="mt-2 mr-1" color="#EF5350" outlined :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'" :type="show1 ? 'text' : 'password'" label="Password" prepend-inner-icon="mdi-lock" @click:append="show1 = !show1"></v-text-field>
+            <v-text-field v-model="name" solo class="mb-n8" color="#EF5350" outlined label="Name" prepend-inner-icon="mdi-account"></v-text-field>
+            <v-text-field v-model="email" solo class="mt-4 mb-n6" color="#EF5350" outlined label="Email" prepend-inner-icon="mdi-email"></v-text-field>
+            <v-text-field v-model="password" solo class="mt-2" color="#EF5350" outlined :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'" :type="show1 ? 'text' : 'password'" label="Password" prepend-inner-icon="mdi-lock" @click:append="show1 = !show1"></v-text-field>
             <v-checkbox class="mt-n4" label="I hereby agreed to the terms and conditions"></v-checkbox>
         </v-col>
       </v-row>

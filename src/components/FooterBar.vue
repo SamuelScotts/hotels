@@ -1,5 +1,5 @@
 <template>
-  <v-bottom-navigation fixed color="#EF5350">
+  <v-bottom-navigation fixed app color="#EF5350">
 
     <router-link to="/" style="text-decoration: none;">
       <v-btn class="mr-14 mt-2" plain color="#EF5350">
