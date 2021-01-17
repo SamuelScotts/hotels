@@ -1,24 +1,13 @@
 # hotels
 
-## Project setup
-```
-npm install
-```
+A hotel booking webapp, build with JavaScript. It uses Firebase Authentication and a Cloud Firestore DB on the backend, while running Vue.js, Vuex and VueRouting on the front.  It allows users to search for, and book, hotels while also allowing them to add to their wish list and maintain their profile.
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+The fantastic UI design comes from Ami Moradia's free resources.  You'll find her Github at https://amimoradia.github.io/
 
-### Compiles and minifies for production
-```
-npm run build
-```
+You'll find the resources I used at:
 
-### Lints and fixes files
-```
-npm run lint
-```
+https://www.sketchappsources.com/free-source/4625-hotel-booking-app-sketch-freebie-resoruce.html
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+and 
+
+https://www.behance.net/gallery/106897675/Hotel-Booking-Application-UX-Case-Study
