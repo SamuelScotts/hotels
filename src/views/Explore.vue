@@ -16,12 +16,22 @@
       </v-row>
       <v-row>
         <v-col>
-          <v-text-field class="mb-n6" color="#EF5350"  outlined label="Outbound Date" prepend-inner-icon="mdi-calendar-month"></v-text-field>
+          <v-menu v-model="menu1" :close-on-content-click="false" :nudge-right="40" transition="scale-transition" offset-y min-width="auto">
+            <template v-slot:activator="{ on, attrs }">
+              <v-text-field class="mb-n6"  color="#EF5350" outlined label="Outbound Date" prepend-inner-icon="mdi-calendar-month" readonly v-bind="attrs" v-on="on"></v-text-field>
+            </template>
+            <v-date-picker no-title color="#EF5350" @input="menu1 = false"></v-date-picker>
+          </v-menu>
         </v-col>
       </v-row>
       <v-row>
         <v-col>
-          <v-text-field class="mb-n6" color="#EF5350"  outlined label="Return Date" prepend-inner-icon="mdi-calendar-month"></v-text-field>
+          <v-menu v-model="menu2" :close-on-content-click="false" :nudge-right="40" transition="scale-transition" offset-y min-width="auto">
+            <template v-slot:activator="{ on, attrs }">
+              <v-text-field class="mb-n6"  color="#EF5350" outlined label="Return Date" prepend-inner-icon="mdi-calendar-month" readonly v-bind="attrs" v-on="on"></v-text-field>
+            </template>
+            <v-date-picker no-title color="#EF5350" @input="menu2 = false"></v-date-picker>
+          </v-menu>
         </v-col>
       </v-row>
       <v-row>
@@ -56,15 +66,21 @@
       </v-row>
 
     </v-container>
+    <FooterBar/>
   </div>
 </template>
 
 <script>
+import FooterBar from '../components/FooterBar'
 
 export default {
-  name: 'Home',
+  name: 'Explore',
   components: {
-    //
-  }
+    FooterBar,
+  },
+  data: () => ({
+    menu1: false,
+    menu2: false,
+  }),
 }
 </script>
