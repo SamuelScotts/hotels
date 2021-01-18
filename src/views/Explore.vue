@@ -18,7 +18,7 @@
         <v-col>
           <v-menu v-model="menu1" :close-on-content-click="false" :nudge-right="40" transition="scale-transition" offset-y min-width="auto">
             <template v-slot:activator="{ on, attrs }">
-              <v-text-field class="mb-n6"  color="#EF5350" outlined label="Outbound Date" prepend-inner-icon="mdi-calendar-month" readonly v-bind="attrs" v-on="on"></v-text-field>
+              <v-text-field class="mb-n6"  color="#EF5350" outlined label="Trip Begins" prepend-inner-icon="mdi-calendar-month" readonly v-bind="attrs" v-on="on"></v-text-field>
             </template>
             <v-date-picker no-title color="#EF5350" @input="menu1 = false"></v-date-picker>
           </v-menu>
@@ -28,7 +28,7 @@
         <v-col>
           <v-menu v-model="menu2" :close-on-content-click="false" :nudge-right="40" transition="scale-transition" offset-y min-width="auto">
             <template v-slot:activator="{ on, attrs }">
-              <v-text-field class="mb-n6"  color="#EF5350" outlined label="Return Date" prepend-inner-icon="mdi-calendar-month" readonly v-bind="attrs" v-on="on"></v-text-field>
+              <v-text-field class="mb-n6"  color="#EF5350" outlined label="Trip Ends" prepend-inner-icon="mdi-calendar-month" readonly v-bind="attrs" v-on="on"></v-text-field>
             </template>
             <v-date-picker no-title color="#EF5350" @input="menu2 = false"></v-date-picker>
           </v-menu>
@@ -62,6 +62,10 @@
             Location: {{ topHotel.location }} <br/>
             Rating: {{ topHotel.rating }}
           </v-card-text>
+          <v-card-actions class="mt-n12">
+            <v-spacer></v-spacer>
+            <router-link to="/hotel" style="text-decoration: none;"><v-btn small outlined color="#EF5350">View</v-btn></router-link>
+          </v-card-actions>
         </v-card>
       </v-row>
 

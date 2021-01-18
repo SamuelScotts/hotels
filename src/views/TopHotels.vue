@@ -2,22 +2,50 @@
   <v-content>
       <v-row>
         <v-col>
-          <h1 class="text-center">Top Hotels</h1>
+          <v-card flat>
+            <v-card-title>
+              <v-btn id="no-background-hover" @click="$router.go(-1)" text class="mr-n16"><v-icon large>mdi-chevron-left</v-icon></v-btn>
+                <v-spacer></v-spacer>
+                  <h1>Top Hotels</h1>
+                <v-spacer></v-spacer>
+            </v-card-title>
+          </v-card>
         </v-col>
       </v-row>
     <v-divider></v-divider>
     <v-container>
 
+      <!-- LOCATION / FILTER -->
+
+      <v-row>
+        <v-col>
+          <v-card flat class="mb-n2">
+            <v-card-actions>
+              <v-icon color="#EF5350">mdi-map-marker</v-icon> Location
+                <v-spacer></v-spacer>
+              <v-btn text small color="#EF5350"><v-icon>mdi-filter</v-icon>Filter</v-btn>
+            </v-card-actions>
+          </v-card>
+        </v-col>
+      </v-row>
+
       <!-- TOP HOTELS CARDS -->
       <v-row>
-        <v-card v-for="(topHotel, index) in topHotels" :key="index" width="16rem" class="ml-3 mt-5 pa-2">
-          <v-img height="150" src="../assets/hotel.jpg"></v-img>
-          <v-card-title>{{ topHotel.name }}</v-card-title>
-          <v-card-text class="mt-n4">
-            Location: {{ topHotel.location }} <br/>
-            Rating: {{ topHotel.rating }}
-          </v-card-text>
-        </v-card>
+        <router-link to="/hotel" style="text-decoration: none;"><v-card v-for="(topHotel, index) in topHotels" :key="index" elevation="6" width="34rem" class="ml-3 mt-5">
+          <v-img height="150" src="../assets/hotel.jpg">
+            <v-card-title style="color: white;">{{ topHotel.name }}</v-card-title>
+            <v-card-text class="mt-n4" style="color: white;">
+              {{ topHotel.location }} <br/>
+              {{ topHotel.rating }} stars <br/>
+              £{{topHotel.price}} per night
+            </v-card-text>
+          </v-img>
+          <v-card-actions>
+            <v-btn text color="#EF5350" dark><v-icon>mdi-bookmark</v-icon>Save</v-btn>
+              <v-spacer></v-spacer>
+            <v-btn color="#ED5350" dark outlined>Book Now</v-btn>
+          </v-card-actions>
+        </v-card></router-link>
       </v-row>
 
     </v-container>
@@ -38,38 +66,17 @@ export default {
   data: () => ({
     menu1: false,
     menu2: false,
-    topHotels:[
-      {
-        name: "Malmasion",
-        location: "Aberdeen",
-        rating: 4.7
-      },
-      {
-        name: "Hilton",
-        location: "Aberdeen",
-        rating: 4.6
-      },
-      {
-        name: "Jurys Inn",
-        location: "Aberdeen",
-        rating: 4.1
-      },
-      {
-        name: "Travel Lodge",
-        location: "Dundee",
-        rating: 3.9
-      },
-      {
-        name: "Malmasion",
-        location: "Dundee",
-        rating: 4.6
-      },
-      {
-        name: "Station Hotel",
-        location: "Perth",
-        rating: 3.1
-      },
-    ],
   }),
+  computed:{
+    topHotels(){
+      return this.$store.state.topHotels
+    }
+  }
 }
 </script>
+
+<style>
+#no-background-hover::before {
+   background-color: transparent !important;
+}
+</style>
