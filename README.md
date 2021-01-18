@@ -14,7 +14,7 @@ https://www.behance.net/gallery/106897675/Hotel-Booking-Application-UX-Case-Stud
 
 ![alt text](https://github.com/SamuelScotts/hotels/blob/master/images/hotel.png)
 
-![alt text](https://github.com/SamuelScotts/hotels/blob/master/images/reviews.png)
+![alt text](https://github.com/SamuelScotts/hotels/blob/master/images/review.png)
 
 ![alt text](https://github.com/SamuelScotts/hotels/blob/master/images/login.png)
 
