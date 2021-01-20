@@ -4,6 +4,7 @@ import Register from '../views/Register.vue'
 import TopHotels from '../views/TopHotels.vue'
 import Hotel from '../views/Hotel.vue'
 import Review from '../views/Review.vue'
+import Booking from '../views/Booking.vue'
 import Profile from '../views/Profile.vue'
 
 export const routes = [
@@ -49,6 +50,14 @@ export const routes = [
     path: '/review',
     name: 'review',
     component: Review,
+     meta: {
+      requiresAuth: true
+   }
+  },
+  {
+    path: '/booking',
+    name: 'booking',
+    component: Booking,
      meta: {
       requiresAuth: true
    }

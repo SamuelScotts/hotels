@@ -2,7 +2,14 @@
   <div>
       <v-row>
         <v-col>
-          <h1 class="text-center">Profile</h1>
+          <v-card flat>
+            <v-card-title>
+              <v-btn id="no-background-hover" @click="$router.go(-1)" text class="mr-n16"><v-icon large>mdi-chevron-left</v-icon></v-btn>
+                <v-spacer></v-spacer>
+                  <h1>Profile</h1>
+                <v-spacer></v-spacer>
+            </v-card-title>
+          </v-card>
         </v-col>
       </v-row>
     <v-divider></v-divider>
@@ -11,7 +18,9 @@
         <v-row>
             <v-col>
                 <v-row>
-                    <v-avatar class="mt-6 ml-6 mb-4" color="#EF5350" size="90"></v-avatar>
+                    <v-avatar class="mt-6 ml-6 mb-4" color="#EF5350" size="90">
+                        <v-img src="../assets/avatar.png" alt="Avatar"></v-img>
+                    </v-avatar>
                     <p class="mt-14 ml-4">{{ name }}</p>
                 </v-row>
             </v-col>

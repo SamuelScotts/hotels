@@ -5,42 +5,91 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+    index: null,
     topHotels:[
       {
         name: "Malcassa",
         location: "Abefoni",
         rating: 4,
-        price: 239
+        price: 239,
+        amenities:{
+          wifi: true,
+          food: true,
+          pets: false,
+          bar: true,
+          pool: false,
+          more: false
+        }
       },
       {
         name: "Flaton",
         location: "Abefoni",
         rating: 4,
-        price: 210
+        price: 210,
+        amenities:{
+          wifi: true,
+          food: true,
+          pets: true,
+          bar: true,
+          pool: true,
+          more: false
+        }
       },
       {
-        name: "Judges Cottage",
+        name: "Judenelo",
         location: "Abefoni",
         rating: 4,
-        price: 200
+        price: 200,
+        amenities:{
+          wifi: true,
+          food: true,
+          pets: false,
+          bar: true,
+          pool: true,
+          more: false
+        }
       },
       {
-        name: "Trekking Bothy",
+        name: "Tredura",
         location: "Bagessa",
         rating: 3,
-        price: 160
+        price: 160,
+        amenities:{
+          wifi: true,
+          food: false,
+          pets: true,
+          bar: true,
+          pool: false,
+          more: false
+        }
       },
       {
         name: "Malcassa",
         location: "Bagessa",
         rating: 4,
-        price: 175
+        price: 175,
+        amenities:{
+          wifi: true,
+          food: true,
+          pets: false,
+          bar: true,
+          pool: true,
+          more: false
+        }
       },
       {
-        name: "Stop Smotel",
+        name: "Sarja Shemol",
         location: "Caratow",
         rating: 3,
-        price: 149
+        price: 149,
+        amenities:{
+          wifi: true,
+          food: false,
+          pets: false,
+          bar: false,
+          pool: false,
+          more: false
+        }
       },
     ],
     reviews:[
@@ -83,10 +132,14 @@ export default new Vuex.Store({
     ],
   },
   mutations: {
-    //
+    setIndex(state, index) {
+      state.index = index;
+    },
   },
   actions: {
-    //
+    setIndex({ commit }, index){
+      commit('setIndex', index)
+    },
   },
   modules: {
     //

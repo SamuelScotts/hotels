@@ -1,8 +1,14 @@
 <template>
-  <v-content>
+  <v-main>
       <v-row>
         <v-col>
-          <h1 class="text-center">Explore</h1>
+          <v-card flat>
+            <v-card-title>
+                <v-spacer></v-spacer>
+                  <h1>Explore</h1>
+                <v-spacer></v-spacer>
+            </v-card-title>
+          </v-card>
         </v-col>
       </v-row>
     <v-divider></v-divider>
@@ -55,23 +61,23 @@
 
       <!-- TOP HOTELS CARDS -->
       <v-row>
-        <v-card v-for="(topHotel, index) in topHotels.slice(0,4)" :key="index" width="16rem" class="ml-3 mt-5 pa-2">
+        <v-card v-for="(hotel, index) in hotels.slice(0,4)" :key="index" width="16rem" class="ml-3 mt-5 pa-2">
           <v-img height="150" src="../assets/hotel.jpg"></v-img>
-          <v-card-title>{{ topHotel.name }}</v-card-title>
+          <v-card-title>{{ hotel.name }}</v-card-title>
           <v-card-text class="mt-n4">
-            Location: {{ topHotel.location }} <br/>
-            Rating: {{ topHotel.rating }}
+            Location: {{ hotel.location }} <br/>
+            Rating: {{ hotel.rating }}
           </v-card-text>
           <v-card-actions class="mt-n12">
             <v-spacer></v-spacer>
-            <router-link to="/hotel" style="text-decoration: none;"><v-btn small outlined color="#EF5350">View</v-btn></router-link>
+            <router-link to="/hotel" style="text-decoration: none;"><v-btn @click="storeIndex(index)" small outlined color="#EF5350">View</v-btn></router-link>
           </v-card-actions>
         </v-card>
       </v-row>
 
     </v-container>
     <FooterBar/>
-  </v-content>
+  </v-main>
 </template>
 
 <script>
@@ -87,39 +93,17 @@ export default {
   data: () => ({
     menu1: false,
     menu2: false,
-    topHotels:[
-      {
-        name: "Malmasion",
-        location: "Aberdeen",
-        rating: 4.7
-      },
-      {
-        name: "Hilton",
-        location: "Aberdeen",
-        rating: 4.6
-      },
-      {
-        name: "Jurys Inn",
-        location: "Aberdeen",
-        rating: 4.1
-      },
-      {
-        name: "Travel Lodge",
-        location: "Dundee",
-        rating: 3.9
-      },
-      {
-        name: "Malmasion",
-        location: "Dundee",
-        rating: 4.6
-      },
-      {
-        name: "Station Hotel",
-        location: "Perth",
-        rating: 3.1
-      },
-    ],
   }),
+  methods:{
+    storeIndex(index){
+      this.$store.dispatch('setIndex', index);
+    }
+  },
+  computed:{
+    hotels(){
+      return this.$store.state.topHotels
+    }
+  }
 /*   mounted(){
     db.collection("hotels").where("rating", "==", 4)
     .get()
