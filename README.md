@@ -8,14 +8,31 @@ You'll find the resources I used at:
 
 https://www.sketchappsources.com/free-source/4625-hotel-booking-app-sketch-freebie-resoruce.html
 
-and 
-
 https://www.behance.net/gallery/106897675/Hotel-Booking-Application-UX-Case-Study
+
+https://unsplash.com/photos/n_IKQDCyrG0
+
+
+Hotel screen:
+
+![alt text](https://github.com/SamuelScotts/hotels/blob/master/images/hotel.png)
+
+Review screen:
+
+![alt text](https://github.com/SamuelScotts/hotels/blob/master/images/review.png)
+
+Login screen:
 
 ![alt text](https://github.com/SamuelScotts/hotels/blob/master/images/login.png)
 
+Register screen:
+
 ![alt text](https://github.com/SamuelScotts/hotels/blob/master/images/register.png)
 
+Outdated - Explore screen:
+
 ![alt text](https://github.com/SamuelScotts/hotels/blob/master/images/explore.png)
+
+Profile screen:
 
 ![alt text](https://github.com/SamuelScotts/hotels/blob/master/images/profile.png)
